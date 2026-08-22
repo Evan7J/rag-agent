@@ -10,8 +10,8 @@ from langgraph.prebuilt import create_react_agent
 import uvicorn
 
 # ====== 配置 ======
-API_KEY = "sk-8f022f7d9f12435bb8cecce6a0aa9829"
-PDF_PATH = r"C:\Users\29153\Desktop\江裕文-Java后端实习简历.pdf"
+API_KEY = os.getenv("DEEPSEEK_API_KEY")
+PDF_PATH = "resume.pdf"
 
 # ====== 初始化（服务启动时执行一次） ======
 print("服务启动中...")

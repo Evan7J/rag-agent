@@ -2,3 +2,6 @@ __pycache__/
 *.pyc
 faiss_index/
 .venv/
+.idea/
+.env
+*.pdf
