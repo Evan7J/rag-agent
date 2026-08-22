@@ -1,3 +1,5 @@
+import os
+
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -6,10 +8,9 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough
 from langchain_core.output_parsers import StrOutputParser
 
-# ====== 配置 ======
-API_KEY = "你的key"
+API_KEY = os.getenv("DEEPSEEK_API_KEY")
 BASE_URL = "https://api.deepseek.com/v1"
-PDF_PATH = "你的PDF文件路径"  # 随便找个PDF，比如下载一篇技术文章
+PDF_PATH = "resume.pdf"
 
 # 大模型和向量模型（用同一个API的embedding）
 llm = ChatOpenAI(

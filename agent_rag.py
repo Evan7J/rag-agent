@@ -1,3 +1,5 @@
+import os
+
 from langchain_openai import ChatOpenAI
 from langchain_community.document_loaders import PyPDFLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
@@ -6,8 +8,8 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_core.tools import tool
 from langgraph.prebuilt import create_react_agent
 
-API_KEY = "你的key"
-PDF_PATH = "你的PDF路径"
+API_KEY = os.getenv("DEEPSEEK_API_KEY")
+PDF_PATH = "resume.pdf"
 
 # 大模型
 llm = ChatOpenAI(
